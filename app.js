@@ -1,3 +1,8 @@
+import './css/cart.scss'; 
+import './css/index.scss'; 
+import './css/product.scss'; 
+import './css/about-as.scss';
+
 import {Router} from './router.js';
 import {cartInLocalS} from './page/page-cart/cart-in-localS.js';
 

@@ -16,7 +16,7 @@ export class cartInLocalS{
     }
     
     findAllAddButtons(){
-        this.checkProductMap()
+        this.checkProductMap();
         this.buttonClass = document.getElementsByClassName("add-cart");
         for(let i = 0; i < this.buttonClass.length; i++){
             let button = this.buttonClass[i];
@@ -57,8 +57,9 @@ export class cartInLocalS{
     check(productIdNum, objProduct){
         if(!this.productMap.has(productIdNum)){
             this.productMap.set(productIdNum, objProduct);
+            objProduct.amount +=1;
         }
-        if(this.productMap.has(productIdNum)){
+        else{
             this.productMap.get(productIdNum).amount+=1;
         }
     }

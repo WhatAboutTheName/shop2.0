@@ -22,6 +22,11 @@ export class Component {
     getElement () {
         return this.element;
     }
+    
+    update(){
+        this.element = this.convertToDOM(this.markup);
+        return this;
+    }
 
     convertToDOM (stringHTML) {
         let el = document.createElement('div');

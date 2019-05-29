@@ -32,6 +32,6 @@ export class Router {
     
     navigate(routeName){
         this.rootElement.innerHTML = "";
-        this.rootElement.appendChild(this.routes[routeName].getElement());
+        this.rootElement.appendChild(this.routes[routeName].update().getElement());
     }
 }

@@ -1,38 +1,40 @@
 #main { 
-    float: right;
-    width: 980px;
+    float: left;
+    width: 1200px;
 
 
     .box-categories {
         float: left;
         border: solid 1px #dedede;
-        margin-right: 10px;
+        margin-left: 100px;
         margin-top: 5px;
         width: 180px;
-        border-radius: 0px 0px 15px 15px;
+        border-radius: 4px 4px 15px 15px;
 
         h2{
             padding: 5px;
             background: #8b0000;
             color: #fff;
+            border-radius: 4px 4px 0px 0px;
         }
     }
 
     .box-content-categ ul {
         list-style-type: none;
         font-size: 19px;
-
+        
         li {
             border-top: solid 1px #ccc;
             padding:5px 0;
-        }
-
-        a {
-            padding: 20px;
-            color: #808080;
-            font-size: 15px;
-            font-weight: 600;
-        }
+        
+            a {
+                padding: 20px;
+                color: #808080;
+                font-size: 15px;
+                font-weight: 600;
+                text-decoration: none;
+            }
+        } 
     }
 
     .ag {
@@ -42,6 +44,7 @@
     .products {
         float: right;
         width: 760px;
+        margin-right: 100px;
 
          ul li { 
             position: relative; 

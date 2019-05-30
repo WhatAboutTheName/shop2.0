@@ -5,7 +5,6 @@ const renderMarkup = (options) =>
 `       
         <div id="main">
             <div class="ag">&nbsp;</div>
-
 			<div class="box-categories">
 				<h2>Categories</h2>
 				<div class="box-content-categ">

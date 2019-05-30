@@ -4,6 +4,7 @@ export class Remove{
         this.destroi = document.getElementsByClassName("cart-info");
         this.removeAllButton = document.getElementsByClassName("remove-all");
         this.removeAllProducts = document.getElementsByClassName("product-in-cart");
+        
     }
     
     start(){
@@ -68,12 +69,14 @@ export class Remove{
             <h1>Your order</h1>
             <div class="cart-info-price">
                 <h4>In the cart:</h4>
-                ${this.allAmount}
+                <h3>${this.allAmount}</h3>
                 <h4>All Price:</h4>
-                $${this.allPrice}
+                <h3>$${this.allPrice}</h3>
             </div>
-            <button type="button" class="place-cart" id='1'>Place your order</button>
-            <button type="button" class="remove-all" id='1'>Remove all</button>
+            <div class="button">
+                <button type="button" class="place-cart" id='1'>Place your order</button>
+                <button type="button" class="remove-all" id='1'>Remove all</button>
+            </div>
         </div>
         `;
     }
@@ -85,8 +88,9 @@ export class Remove{
         }
     }
     
-    removeProduct(buttonItem){///////////
+    removeProduct(buttonItem){
         buttonItem.remove();
+        this.finedAllRemoveButton();
     }
     
     removeAll(deleteElem, e){

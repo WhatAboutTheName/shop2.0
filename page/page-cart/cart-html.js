@@ -1,11 +1,16 @@
 export class CartHtml{
-    
+
     clean(){
         this.cartSlot = document.getElementById('cart-slot');
         this.cartSlot ? this.cartSlot.innerHTML= '' : true;
         this.cartInfo = document.getElementById('cart-info');
         this.cartInfo ? this.cartInfo.innerHTML= '' : true;
         this.checkCartLocal();
+    }
+    
+    noProducts(){
+        this.noProduct = document.getElementById("no-product");
+        this.noProduct.innerHTML = '';
     }
     
     checkCartLocal(){
@@ -48,20 +53,25 @@ export class CartHtml{
     placeOrder(allPrice, allAmount){
         let div = document.createElement('div');
         if(this.cartInfo){
+            this.noProducts();
             this.cartInfo.appendChild(div);
         }
         div.innerHTML = `
         <div class="cart-info">
             <h1>Your order</h1>
             <div class="cart-info-price">
-                <h4>In the cart:</h4>
-                ${allAmount}
+                <h4>In cart:</h4>
+                <h3>${allAmount}</h3>
                 <h4>All Price:</h4>
-                $${allPrice}
+                <h3>$${allPrice}</h3>
             </div>
-            <button type="button" class="place-cart" id='1'>Place your order</button>
-            <button type="button" class="remove-all" id='1'>Remove all</button>
+            <div class="button">
+                <button type="button" class="place-cart" id='1'>Place your order</button>
+                <button type="button" class="remove-all" id='1'>Remove all</button>
+            </div>
         </div>
         `;
     }
+    
+    
 }

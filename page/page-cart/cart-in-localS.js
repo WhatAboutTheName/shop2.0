@@ -42,8 +42,8 @@ export class cartInLocalS{
     
     addCart(label, price, imageSrc, productId){
         this.amount = 0;
-        let productIdNum = Number(productId);
-        let objProduct = {
+        let productIdNum = Number(productId),
+            objProduct = {
             label: label,
             price: price,
             imageSrc: imageSrc,

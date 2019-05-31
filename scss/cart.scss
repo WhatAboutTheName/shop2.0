@@ -9,20 +9,70 @@
     
     
     .plase-order {
-        
         position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        line-height: 200px;
-        height: 200px;
-        margin-left: -150px;
-        margin-top: -100px;
-        background-color: #f1c40f;
+        top: 20%;
+        left: 40%;
+        width: 500px;
+        line-height: 60px;
+        height: 350px;
+        margin-left: -100px;
+        margin-top: -30px;
+        background-color: #dedede;
         text-align: center;
-        border-radius: 5px;
+        border-radius: 10px;
         z-index: 10; 
         box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+        
+        h4{
+            padding: 5px;
+            background: #8b0000;
+            color: #fff;
+            border-radius: 10px 10px 0px 0px;
+            font-size: 30pt;
+        }
+            
+        .enter{
+            height: 210px;
+
+            h3{
+                height: 40px;
+                color: #808080;
+            }
+            
+            .user-name{
+                width: 320px;
+                height: 25px;
+                font-size: 110%; 
+            }
+            
+            .phone-number{
+                width: 320px;
+                height: 25px;
+                font-size: 110%; 
+            }
+            
+        }
+        .button { 
+            button{
+                width: 80px;
+                height: 32px;
+                background-color: #8b0000;
+                border: 10px;
+                cursor: pointer;
+                color: #fff;
+                border-radius: 10px 10px 10px 10px;
+            }
+            
+            input{
+                width: 80px;
+                height: 32px;
+                background-color: #8b0000;
+                border: 10px;
+                cursor: pointer;
+                color: #fff;
+                border-radius: 10px 10px 10px 10px;
+            }
+        }
     }
     
         .cart-info{

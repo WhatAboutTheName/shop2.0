@@ -1,4 +1,10 @@
+import {PlaseOrder} from "./place-order.js"
+
 export class CartHtml{
+    
+    constructor(){
+        this.plaseOrder = new PlaseOrder();
+    }
 
     clean(){
         this.cartSlot = document.getElementById('cart-slot');
@@ -71,6 +77,7 @@ export class CartHtml{
             </div>
         </div>
         `;
+        this.plaseOrder.findPlaceOrderEvent();
     }
     
     

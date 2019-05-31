@@ -20,9 +20,9 @@ export class PlaseOrder{
                 <h4>Place your order</h4>
                 <div class="enter">
                     <h3>Enter your name</h3>
-                    <input type="text/scss"  name="user name" pattern = "[A-Za-z0-9]{6,}" title = "Enter your name" class="user-name">
+                    <input type="text/scss"  name="user name" pattern = "[A-Za-z]{6,}" title = "Enter your name" class="user-name">
                     <h3>Enter your phone number</h3>
-                    <input type="text"  name="phone number" pattern = "[0-9]{3}-?[0-9]{2}-?[0-9]{2}" title = "Enter your phone number with the code" class="phone-number">
+                    <input type="Text"  name="phone number" pattern = "[0-9]{3}-[0-9]{2}-[0-9]{2}" title = "Enter your phone number with the code" class="phone-number">
                 </div>
                 <div class="button">
                         <input type="submit" name="submit order" class="submit-order" value="acept">
@@ -49,7 +49,9 @@ export class PlaseOrder{
     }
     
     submit(e){
-        alert("Your order acept");
+        if(this.pattern){
+            alert("Your order acept");
+        }
     }
     
 }

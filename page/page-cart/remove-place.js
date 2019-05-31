@@ -1,9 +1,12 @@
+import {PlaseOrder} from "./place-order.js"
+
 export class Remove{
     constructor(){
         this.buttonRemove = document.getElementsByClassName("remove-cart");
         this.destroi = document.getElementsByClassName("cart-info");
         this.removeAllButton = document.getElementsByClassName("remove-all");
         this.removeAllProducts = document.getElementsByClassName("product-in-cart");
+        this.plaseOrder = new PlaseOrder();
     }
     
     start(){
@@ -27,6 +30,7 @@ export class Remove{
             }
         buttonRemove.addEventListener('click', this.removeAll.bind(this, deleteElem));
         }
+        this.plaseOrder.findPlaceOrderEvent();
     }
     
     readButtonElement(e){

@@ -21,9 +21,6 @@ const renderMarkup = (options) =>
 	   </div>
 `;
 
-/**
- * Страница ввода логина.
- */
 export class ProductFirstPage extends Component {
     constructor(options = {}) {
         super(options, renderMarkup(options));

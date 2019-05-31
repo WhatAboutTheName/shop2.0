@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './app.js',
@@ -44,6 +45,9 @@ module.exports = {
                 removeComments: true,
                 collapseWhitespace: false
             }
-        })
+        }),
+        new CopyWebpackPlugin([
+            {from:'img', to:'img'} 
+        ])
     ]
 };

@@ -4,7 +4,6 @@ export class Remove{
         this.destroi = document.getElementsByClassName("cart-info");
         this.removeAllButton = document.getElementsByClassName("remove-all");
         this.removeAllProducts = document.getElementsByClassName("product-in-cart");
-        
     }
     
     start(){
@@ -43,7 +42,7 @@ export class Remove{
         this.allPrice = 0;
         this.allAmount = 0;
         let mapSetJson = new Map();
-        for (var [key, el] of getJson) {
+        for (let [key, el] of getJson) {
             cartHtmlObj = {key, el};
             if(Number(buttonTarget.id) !== cartHtmlObj.key){
                 mapSetJson.set(cartHtmlObj.key, cartHtmlObj.el);
@@ -68,7 +67,7 @@ export class Remove{
         <div class="cart-info">
             <h1>Your order</h1>
             <div class="cart-info-price">
-                <h4>In the cart:</h4>
+                <h4>In cart:</h4>
                 <h3>${this.allAmount}</h3>
                 <h4>All Price:</h4>
                 <h3>$${this.allPrice}</h3>
@@ -90,6 +89,9 @@ export class Remove{
     
     removeProduct(buttonItem){
         buttonItem.remove();
+        if(localStorage.getItem('cart') === "[]"){
+            localStorage.removeItem("cart");
+        }
         this.finedAllRemoveButton();
     }
     

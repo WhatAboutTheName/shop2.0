@@ -30,8 +30,9 @@ export class cartInLocalS{
             buttonItem = buttonTarget.parentElement.parentElement.parentElement,
             label = buttonItem.getElementsByClassName("label")[0].innerText,
             price = buttonItem.getElementsByClassName("price")[0].innerText,
-            imageSrc = buttonItem.getElementsByClassName("img-p")[0].src;
-        this.addCart(label, price, imageSrc, productId);
+            imageSrc = buttonItem.getElementsByClassName("img-p")[0].src,
+            amount = buttonItem.getElementsByClassName("input-amount")[0].value;
+        this.addCart(label, price, imageSrc, productId, amount);
     }
     
     checkProductMap(){
@@ -40,14 +41,14 @@ export class cartInLocalS{
         this.remove.start();
     }
     
-    addCart(label, price, imageSrc, productId){
-        this.amount = 0;
-        let productIdNum = Number(productId),
+    addCart(label, price, imageSrc, productId, amount){
+        let amountNew = Number(amount) !== 0 ? Number(amount) : 1,
+            productIdNum = Number(productId),
             objProduct = {
             label: label,
             price: price,
             imageSrc: imageSrc,
-            amount: this.amount,
+            amount: Math.round(amountNew < 0 && amountNew >= -99 ? -amountNew : amountNew > 0 && amountNew <= 99 ? amountNew : 1),
             id: productIdNum
         };
         this.check(productIdNum, objProduct);
@@ -57,9 +58,7 @@ export class cartInLocalS{
     check(productIdNum, objProduct){
         if(!this.productMap.has(productIdNum)){
             this.productMap.set(productIdNum, objProduct);
-            objProduct.amount +=1;
-        }
-        else{
+        } else {
             this.productMap.get(productIdNum).amount+=1;
         }
     }
@@ -67,5 +66,17 @@ export class cartInLocalS{
     addCartLocalStorage(){
         let createJson = Array.from(this.productMap.entries());
         localStorage.setItem('cart', JSON.stringify(createJson));
+        this.checkLocalS();
+    }
+    
+    checkLocalS(){
+        let createJson = JSON.parse(localStorage.getItem('cart'));
+        if(localStorage.getItem('cart') != null){
+            let localStorageObj = new Map();
+            for (let [key, el] of createJson) {
+                localStorageObj.set(key, el);
+            }
+        this.productMap = localStorageObj;
+        }
     }
 }

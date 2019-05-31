@@ -8,13 +8,10 @@ export class Router {
         this.hashChanged();
     }
 
-    /**
-     * Обработчик события изменения значения хэша в адресной строке.
-     */
     hashChanged(){     
         const routeName = window.location.hash.length > 0
             ? window.location.hash.substr(1) 
-            : 'default';    
+            : 'default';  
         this.navigate(routeName);
         this.listeners.forEach(fn => {
             setTimeout(() => {
@@ -23,9 +20,6 @@ export class Router {
         });
     }
 
-    /**
-     * Осуществляет переход на другой роут.
-     */
     addUpdateSlotListener(fn){
         this.listeners.push(fn);
     }

@@ -45,6 +45,7 @@ function getProductsHtmlNike (label){
 				    <div class="product-i">
 				        <h4>MEN’S</h4>
 				        <strong class="price">$${products.price}</strong>
+                        <input type="number"  name = "amount" class="input-amount">
 				        <button type="button" class="add-cart" id='${products.id}'>In cart</button>
 				    </div>
             </div>

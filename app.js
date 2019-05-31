@@ -32,7 +32,7 @@ export const router = new Router(
     document.getElementById('main')
 );
 
-router.navigate("product");
+router.navigate(window.location.hash.substr(1).length > 0 ? window.location.hash.substr(1) : 'default');
 
 const cart = new cartInLocalS();
 cart.start();

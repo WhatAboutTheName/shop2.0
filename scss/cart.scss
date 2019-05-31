@@ -7,6 +7,24 @@
             height: 20px;
         }
     
+    
+    .plase-order {
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        line-height: 200px;
+        height: 200px;
+        margin-left: -150px;
+        margin-top: -100px;
+        background-color: #f1c40f;
+        text-align: center;
+        border-radius: 5px;
+        z-index: 10; 
+        box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+    }
+    
         .cart-info{
             float: left;
             margin: 5px;
